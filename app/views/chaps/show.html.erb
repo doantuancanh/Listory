@@ -1,0 +1,8 @@
+<h1 style = "text-align: center"><%= @chap.name %></h1>
+<p><%= @chap.content %></p>
+
+<%= link_to 'Edit', edit_story_chap_path(@story, @chap.id) %> 
+<%= link_to 'Destroy Chap', story_chap_path(@story, @chap.id),
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %><br>
+<%= link_to 'Back', story_path(@story) %>
