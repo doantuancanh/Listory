@@ -4,6 +4,29 @@ class ChapsController < ApplicationController
 
   def show
   	@chap = @story.chaps.find(params[:id])
+    # id_list = @story.chaps.where(story_id: @story.id).order(id: :asc)
+    id_list = []
+    @story.chaps.each do |chap|
+      id_list << chap.id
+    end
+    id_list.sort! 
+    i = @chap.id
+    j = id_list.index(i)
+    if i == id_list.last
+      @next_chap = nil
+    else 
+      i = id_list[j + 1]
+      @next_chap = @story.chaps.find(i)
+      # @next_chap = @story.chaps.where(id: i)
+    end
+    i = @chap.id
+    if i == id_list.first 
+      @previous_chap = nil
+    else
+      k = id_list[j - 1]
+      @previous_chap = @story.chaps.find(k)
+    
+    end
   end
 
   def new

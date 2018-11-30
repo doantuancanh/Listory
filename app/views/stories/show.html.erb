@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
-<%= link_to image_tag(@story.image.url(:med)), @story.image.url %>
-<p>
-  <strong>Name:</strong>
-  <%= @story.name %>
-</p>
 
-<p>
-  <strong>Descripton:</strong>
+<h2 style = "text-align: center; color: red">
+  
+  <%= @story.name %>
+</h2>
+
+<p style = "text-align: left">
+ 
   <%= @story.descripton %>
 </p>
 
@@ -14,9 +14,15 @@
   <strong>Author:</strong>
   <%= @story.author %>
 </p>
+
 <% @story.chaps.each do |chap| %>
   <p><%= link_to chap.name, story_chap_path(@story, chap.id) %></p>
+  
 <% end %>
-<%= link_to 'Add new chap', new_story_chap_path(@story) %><br>
+
+<% if @story.user == current_user %>
+  <%= link_to 'Add new chap', new_story_chap_path(@story) %>
+<% end %>
+<br>
 <%= link_to 'Edit', edit_story_path(@story) %> |
 <%= link_to 'Back', stories_path %>
