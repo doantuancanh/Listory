@@ -1,0 +1,114 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p.next {
+    text-align: center;
+}
+
+/* line 23, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+a.edit {
+  float: right;
+}
+
+/* line 25, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 28, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+a.new-story {
+  text-align: center;
+  font-size: 20px;
+  margin: 150px;
+}
+
+/* line 23, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 32, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 36, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+ul.read-stories {
+  list-style: none;
+}
+
+/* line 26, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 37, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 42, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+a.story {
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+}
+
+/* line 23, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 32, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 47, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 51, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+nav.navbar.navbar-default {
+  margin-bottom: 0;
+  border: 0;
+  border-radius: 0;
+  font-size: 17px;
+}
+
+/* line 22, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 31, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 41, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 57, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 62, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+.logo {
+  width: 60px;
+  height: 60px;
+  left: 0;
+}
+
+/* line 27, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 38, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 49, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 66, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 72, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+.description {
+  margin-top: 10px;
+  border-bottom: 1px solid blue;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* line 45, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 58, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 76, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 83, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+.col-md-3.col-lg-3.read_form {
+  border-left: 2px solid black;
+  margin-left: 80px;
+}
+
+/* line 81, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+/* line 89, /home/doantuancanh/Workspace/Ruby-on-rails/Listoy/app/assets/stylesheets/application.scss */
+img.story-img {
+  position: relative;
+}
+
+p.chap-content {
+    font-size: 20px;
+    line-height: 1.7;
+    padding: 15px;
+}
+
+.thumbnail > img, .thumbnail a > img{
+  height: 360px;
+}

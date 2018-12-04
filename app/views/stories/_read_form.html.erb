@@ -1,0 +1,6 @@
+<h2><%= link_to "Truyen da doc" , "#" %></h2>
+<ul class="read-stories">
+	<% @stories.each do |story| %>
+		<li><%= link_to story.name, story_path(story),:class => "read-story" %></li>
+	<% end %>
+</ul>  

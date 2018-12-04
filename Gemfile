@@ -4,13 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
+gem 'rails', '~> 5.2.1'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -60,10 +60,16 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'devise', '~> 4.5'
+gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'paperclip', '~> 6.1'
-gem 'pry', '~> 0.12.2'
+gem 'devise', '~> 4.5'
+
 group :production do
   gem "pg",             "~> 0.18"
   gem "rails_12factor", "0.0.2"
 end
+
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'sass-rails', '>= 3.2'
+
+gem 'jquery-rails'

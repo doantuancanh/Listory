@@ -1,43 +1,31 @@
 <p id="notice"><%= notice %></p>
-<% if user_signed_in? %>
- 
-  <h3><%= link_to('Logout', destroy_user_session_path, method: :delete) %></h3> 
-  
-<% else %>
-  
-  <h3 style = "text-align: center; color:black">Please
-  <%= link_to('Login', new_user_session_path)  %> or <%= link_to('Register', new_user_registration_path)  %> </h3> 
-  
-<% end %>
-<h1>Stories</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Author</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @stories.each do |story| %>
-      <tr>
-        <td><%= story.name %></td>
-        <td><%= story.descripton %></td>
-        <td><%= story.author %></td>
-        <td><%= link_to 'Show', story %></td>
-        <% if story.user == current_user  %>
-          <td><%= link_to 'Edit', edit_story_path(story) %></td>
-          <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1 style = "text-align: center;">Stories</h1>
 <% if user_signed_in?  %>
-  <%= link_to 'New Story', new_story_path %>
+  <%= link_to 'Write new Story', new_story_path, :class => 'new-story' %>
 <% end %>
-<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-lg-8 content">
+      <h2><%= link_to "Truyen hot" , "#" %></h2>
+      <%= render 'hot_form' %>
+    </div>
+    <div class="col-md-3 col-lg-3 read_form">
+      <%= render 'read_form' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-lg-8 content">
+      <h2><%= link_to "Truyen Tien Hiep" , "#" %></h2>
+      <%= render 'hot_form' %>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-lg-8 content">
+      <h2><%= link_to "Truyen Ngon Tinh" , "#" %></h2>
+      <%= render 'hot_form' %>
+    </div>
+  </div>
+</div>
+
 
