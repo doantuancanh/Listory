@@ -63,6 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'paperclip', '~> 6.1'
 gem 'devise', '~> 4.5'
+<<<<<<< HEAD
 
 group :production do
   gem "pg",             "~> 0.18"
@@ -73,3 +74,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '>= 3.2'
 
 gem 'jquery-rails'
+=======
+gem 'paperclip', '~> 6.1'
+gem 'pry', '~> 0.12.2'
+>>>>>>> 9421f9764320da27ae99f8b12419b88a9addd0ba

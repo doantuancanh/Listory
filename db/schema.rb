@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_12_04_105309) do
+=======
+ActiveRecord::Schema.define(version: 2018_11_30_025429) do
+>>>>>>> 9421f9764320da27ae99f8b12419b88a9addd0ba
 
   create_table "chaps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -31,7 +35,10 @@ ActiveRecord::Schema.define(version: 2018_12_04_105309) do
     t.bigint "image_file_size"
     t.datetime "image_updated_at"
     t.integer "user_id"
+<<<<<<< HEAD
     t.string "image_file_name"
+=======
+>>>>>>> 9421f9764320da27ae99f8b12419b88a9addd0ba
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
