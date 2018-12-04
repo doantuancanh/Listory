@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="container">
 	<h1 style = "text-align: center"><%= link_to @story.name, story_path(@story) %></h1>
 	<h1 style = "text-align: center"><%= @chap.name %></h1>
@@ -20,25 +20,3 @@
 
 	<%= link_to 'Back', story_path(@story) %>
 </div>
-=======
-<h1 style = "text-align: center"><%= link_to @story.name, story_path(@story) %></h1>
-
-<h1 style = "text-align: center"><%= @chap.name %></h1>
-<%= link_to 'Edit', edit_story_chap_path(@story, @chap.id) %> 
-<%= link_to 'Destroy Chap', story_chap_path(@story, @chap.id),
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %><br>
-
-<p><%= @chap.content %></p>
-
-
-<% if @previous_chap != nil %>
-<%= link_to 'Previous', story_chap_path(@story, @previous_chap) %>
-<% end %>
-|
-<% if @next_chap != nil %>
-<%= link_to 'Next', story_chap_path(@story, @next_chap) %>
-<% end %><br>
-
-<%= link_to 'Back', story_path(@story) %>
->>>>>>> 9421f9764320da27ae99f8b12419b88a9addd0ba

@@ -3,7 +3,7 @@ class ChapsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def show
-<<<<<<< HEAD
+
   	@chap = Chap.find(params[:id]) 
     id_list = @story.chaps.ids.sort
     # # id_list = []
@@ -29,34 +29,7 @@ class ChapsController < ApplicationController
     # end
     @next_chap_id = id_list.detect { |e| e > @chap.id.to_i }
     @previous_chap_id = id_list.reverse.detect{ |e| e < @chap.id}
-=======
-  	@chap = @story.chaps.find(params[:id])
-    # id_list = @story.chaps.where(story_id: @story.id).order(id: :asc)
-    id_list = []
-    @story.chaps.each do |chap|
-      id_list << chap.id
-    end
-    id_list.sort! 
-    i = @chap.id
-    j = id_list.index(i)
-    if i == id_list.last
-      @next_chap = nil
-    else 
-      i = id_list[j + 1]
-      @next_chap = @story.chaps.find(i)
-      # @next_chap = @story.chaps.where(id: i)
-    end
-    i = @chap.id
-    if i == id_list.first 
-      @previous_chap = nil
-    else
-      k = id_list[j - 1]
-      @previous_chap = @story.chaps.find(k)
-    
-    end
->>>>>>> 9421f9764320da27ae99f8b12419b88a9addd0ba
   end
-
   def new
   end
 
