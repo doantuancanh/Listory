@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_12_04_105309) do
-=======
-ActiveRecord::Schema.define(version: 2018_11_30_025429) do
->>>>>>> 9421f9764320da27ae99f8b12419b88a9addd0ba
+ActiveRecord::Schema.define(version: 2018_12_05_090150) do
 
   create_table "chaps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -36,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_025429) do
     t.datetime "image_updated_at"
     t.integer "user_id"
     t.string "image_file_name"
+    t.string "story_type"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

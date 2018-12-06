@@ -26,7 +26,15 @@
     <%= form.text_field :author %>
   </div>
 
-   <div>
+  <div class="field">
+    <%= form.label :story_type %><br>
+    <%= check_box_tag "story[story_type][]", value = "tien hiep"%> Tien hiep <br>
+    <%= check_box_tag "story[story_type][]", value = "do thi"%> Do thi <br>
+    <%= check_box_tag "story[story_type][]", value = "sac" %> Sac <br>
+    <%= check_box_tag "story[story_type][]", value = "huyen huyen" %> Huyen huyen <br>
+  </div>
+
+  <div>
     <%= form.file_field :image %>
   </div>
 
