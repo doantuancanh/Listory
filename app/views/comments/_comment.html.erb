@@ -2,7 +2,7 @@
 <% @story.comments.each do |comment| %>
 	<p>
 	  <strong><%= comment.name %></strong>: <%= comment.content %>  
-	<% if user_signed_in? || current_user.email == @comment.name %>
+	<% if user_signed_in? && current_user.email == comment.name %>
 		<%= link_to 'Delete comment', [comment.story, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>

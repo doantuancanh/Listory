@@ -26,8 +26,9 @@ class StoriesController < ApplicationController
   # POST /stories
   # POST /stories.json
   def create
-     
+    
     @story = current_user.stories.build(story_params)
+
     respond_to do |format|
       if @story.save
         format.html { redirect_to @story, notice: 'Story was successfully created.' }
