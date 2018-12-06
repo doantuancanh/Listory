@@ -1,9 +1,11 @@
 
 <ul class="read-stories">
 	<% @stories.each do |story| %>
-    <div class="col-md-4 col-lg-4 thumbnail anh">
-      <%= link_to image_tag(story.image.url), story_path(story), :class => "story-img img-responsive "%>
-      <%= link_to story.name, story_path(story),:class => "story" %>
-    </div>  
+		
+	    <div class="col-md-4 col-lg-4 thumbnail anh">
+	      <%= link_to image_tag(story.image.url), story_path(story), :class => "story-img img-responsive "%>
+	      <%= link_to story.name, story_path(story),:class => "story" %>
+	    </div>  
+	
   <% end %>
 </ul>  

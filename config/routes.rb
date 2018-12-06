@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :stories do
   	resources :chaps
   end
+  resources :stories do 
+  	resources :comments
+  end
   devise_for :users
 
   root "stories#index"

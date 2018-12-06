@@ -26,12 +26,13 @@
     <%= form.text_field :author %>
   </div>
 
-  <div class="field">
+  <div id = "check-box" class="field">
     <%= form.label :story_type %><br>
-    <%= check_box_tag "story[story_type][]", value = "tien hiep"%> Tien hiep <br>
-    <%= check_box_tag "story[story_type][]", value = "do thi"%> Do thi <br>
-    <%= check_box_tag "story[story_type][]", value = "sac" %> Sac <br>
-    <%= check_box_tag "story[story_type][]", value = "huyen huyen" %> Huyen huyen <br>
+    <%= check_box_tag "story[story_type]", value = "tien hiep", :class => "check" %> Tien hiep <br>
+    <%= check_box_tag "story[story_type]", value = "do thi", :class => "check"%> Do thi <br>
+    <%= check_box_tag "story[story_type]", value = "sac", :class => "check" %> Sac <br>
+    <%= check_box_tag "story[story_type]", value = "huyen huyen", :class => "check" %> Huyen huyen <br>
+    <%= check_box_tag "story[story_type]", value = "ngon tinh", :class => "check" %> Ngon tinh <br>
   </div>
 
   <div>

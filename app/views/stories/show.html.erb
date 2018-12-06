@@ -22,6 +22,13 @@
 	  
 	<% end %>
 
+	<%= render 'comments/comment' %>
+
+	<% if user_signed_in? %>
+		<h2>Add a comment:</h2>
+		<%= render 'comments/form' %>
+	<% end %>
+	
 	<% if @story.user == current_user %>
 	  <%= link_to 'Add new chap', new_story_chap_path(@story) %>
 	<% end %>

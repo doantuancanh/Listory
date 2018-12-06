@@ -1,0 +1,9 @@
+<%= form_with(model: [ @story, @story.comments.build ], local: true) do |form| %>
+	<p><%= current_user.email %>:</p>
+	<p>
+		<%= form.text_area :content %>
+	</p>
+	<p>
+		<%= form.submit %>
+	</p>
+<% end %>
