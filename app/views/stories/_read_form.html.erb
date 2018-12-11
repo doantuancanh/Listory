@@ -4,8 +4,14 @@
 		<li><%= link_to story.name, story_path(story),:class => "read-story" %></li>
 	<% end %>
 </ul>   -->
-<ul class="list-group">
-	<% @stories.each do |story| %>
-		<li><%= link_to story.name, story_path(story),:class => "read-story" %></li>
+<ul>
+<% if user_signed_in? && cookies[:nearest_stories] != nil %>
+
+
+	<% JSON.load(cookies[:nearest_stories]).each do |st|%>
+		<% s = Story.find(st["story_id"].to_i) %>
+		<li><%= link_to s.name, story_path(s) %></li>
 	<% end %>
+
+<% end %>
 </ul>

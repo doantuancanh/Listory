@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_080518) do
+ActiveRecord::Schema.define(version: 2018_12_10_100917) do
 
   create_table "chaps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 2018_12_06_080518) do
     t.index ["story_id"], name: "index_comments_on_story_id"
   end
 
+  create_table "searches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "keywords"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "stories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "descripton"
@@ -42,6 +48,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_080518) do
     t.integer "user_id"
     t.string "image_file_name"
     t.string "story_type"
+    t.integer "reader"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

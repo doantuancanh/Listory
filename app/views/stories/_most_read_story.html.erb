@@ -1,0 +1,9 @@
+<h2> Most read story </h2>
+<% a = Story.all.map { |s| [s.id, s.reader]} %>
+<% b = a.sort_by{|x,y| y}.reverse! %>
+<ul>
+	<% for i in 0..4 do %>
+		<% s = Story.find(b[i][0]) %>
+		<li><%= link_to s.name, story_path(s) %></li>
+	<% end %>
+</ul>

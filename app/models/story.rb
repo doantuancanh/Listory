@@ -4,4 +4,7 @@ class Story < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   has_many :chaps, :dependent => :destroy
   has_many :comments, :dependent => :destroy
+  def self.search(search)
+	  where("name LIKE ?",  "%#{search}%") 
+	end
 end

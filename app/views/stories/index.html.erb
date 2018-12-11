@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <h1 style = "text-align: center;">Stories</h1>
 <% if user_signed_in?  %>
   <%= link_to 'Write new Story', new_story_path, :class => 'new-story' %>
@@ -19,7 +18,9 @@
       <h2><%= link_to "Truyen Tien Hiep" , "#" %></h2>
       <%= render 'hot_form' %>
     </div>
-    
+    <div class="col-md-3 col-lg-3 read_form">
+      <%= render 'most_read_story' %>
+    </div>
   </div>
   <div class="row">
     <div class="col-md-8 col-lg-8 content">
@@ -28,5 +29,3 @@
     </div>
   </div>
 </div>
-
-
