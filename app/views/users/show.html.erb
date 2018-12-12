@@ -1,0 +1,31 @@
+<% if user_signed_in?	 %>
+	<h1 style = "text-align: center">Welcom <%= current_user.email %></h1>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Story Name</th>
+				<th>Add new chap</th>
+				<th>Chap</th>
+				<th>Date</th>
+				<th>Views</th>
+			</tr>
+		</thead>
+		<tbody>
+				<% current_user.stories.each do |story|%>
+				<tr>
+					<td><%= link_to story.name, story_path(story) %></td>
+					<td><%= link_to 'Add new chap', new_story_chap_path(story) %></td>
+					<td>
+						<% if story.chaps.blank? %>
+							<%= link_to 'Add new chap', new_story_chap_path(story) %>
+						<% else %>
+							<%= link_to story.chaps.last.name, story_chap_path(story, story.chaps.last) %>
+						<% end %>
+					</td>
+					<td><%= story.created_at %></td>
+					<td><%= story.reader %></td>
+				</tr>
+				<% end %>
+		</tbody>
+	</table>
+<% end %>

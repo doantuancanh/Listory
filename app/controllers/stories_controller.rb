@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  
+  before_action :set_cookies, only: [:show]
   # GET /stories
   # GET /stories.json
   def index
@@ -18,10 +18,9 @@ class StoriesController < ApplicationController
   # GET /stories/1
   # GET /stories/1.json
   def show
-   
+  	# binding.pry
     @story.reader = @story.reader + 1
     @story.save
-    set_cookies
   end
 
   # GET /stories/new
@@ -89,16 +88,17 @@ class StoriesController < ApplicationController
 
     def set_cookies
       if user_signed_in?
-        if cookies[:nearest_stories] == nil
-          cookies[:nearest_stories] = Array.new
+        if cookies[:nearest_stories].blank?
+          cookies[:nearest_stories] = []
           cookies[:nearest_stories] << {:user_email => current_user.email, :story_id => @story.id.to_s}
           cookies[:nearest_stories] = cookies[:nearest_stories].to_json
         else
+        	
           cookies[:nearest_stories] = JSON.load(cookies[:nearest_stories])
           a = {:user_email => current_user.email, :story_id => @story.id.to_s}
-          a = JSON.load(a.to_json)
           if cookies[:nearest_stories].include?(a) == false
             cookies[:nearest_stories].unshift(a)
+            cookies[:nearest_stories].delete_at(5) if cookies[:nearest_stories].length >= 5
           end
           cookies[:nearest_stories] = cookies[:nearest_stories].to_json
         end
